@@ -1,0 +1,92 @@
+
+#pr-owl {
+    /*width:  1600px;*/
+    width: 500px;
+    height:  400px;
+    /*float: left;*/
+    /*text-align: center*/
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+/*.item {*/
+/*	height: 600px;*/
+/*}*/
+
+img {
+  	/*height:  100%;*/
+  	/*width:   auto;*/
+  	width: 100%;
+  	height: 100%;
+  	/*vertical-align: middle;*/
+}
+
+/*.todays-picks {*/
+/*    clear: both;*/
+/*}*/
+
+/*.products {*/
+    /*height: 500px;*/
+/*    background: #f7f5f3;*/
+/*}*/
+
+/*.product-grid {*/
+	/*width: 100%;*/
+/*	max-width: 1500px;*/
+/*}*/
+
+/*.product {*/
+/*	margin: 40px;*/
+/*    max-height: 600px;*/
+/*	float: left;*/
+/*	width: 348px;*/
+/*	position: relative;*/
+/*    max-width: 500px;*/
+/*	float: left;*/
+/*}*/
+
+/*.product>button {*/
+/*	text-align:center;*/
+/*	display: inline-block;*/
+/*	width: 40px;*/
+/*	height: 40px;*/
+/*	background: none;*/
+/*	border: none;*/
+/*	position: absolute;*/
+/*	cursor: pointer;*/
+/*	top: 60%;*/
+/*	margin-top: -25px;*/
+/*}*/
+
+/*.product>.owl-r {*/
+/*	left: 89%;*/
+/*}*/
+
+/*.product-name {*/
+/*    text-align: center;*/
+/*    padding: 30px;*/
+/*}*/
+
+.breadcrumb {
+    color: grey;
+    font-size: 12;
+    margin-bottom: 20px;
+}
+
+.product-details {
+    margin: 30px;
+}
+
+.product-price {
+    float: left;
+    width: 50%;
+    overflow: hidden;
+}
+
+product-description {
+    float: left;
+    margin-left: 50%;
+    overflow: hidden;
+}

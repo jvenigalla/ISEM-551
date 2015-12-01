@@ -1,0 +1,123 @@
+<html>
+    <head>
+        
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+		
+		 <!--Important Owl stylesheet -->
+		<link rel="stylesheet" href="scripts/owl-carousel/owl.carousel.css">
+ 
+		 <!--Default Theme -->
+		<link rel="stylesheet" href="scripts/owl-carousel/owl.theme.css">
+ 
+		  <!--jQuery 1.7+  -->
+		<script src="scripts/jquery-1.11.2.js"></script>
+ 
+		 <!--Include js plugin -->
+		<script src="scripts/owl-carousel/owl.carousel.js"></script>
+		
+		<script>
+    		$(document).ready(function() {
+    		  var products = document.getElementById('product-grid').children;
+    		  var i;
+    		  for (i = 0; i < products.length; i++) {
+    		  	var product = products[i].children[0]
+    		  	$("#"+ product.id).owlCarousel(
+        			{
+        				items : 1
+        			}
+        		);
+    			}
+    		});
+    	</script>
+    </head>
+    <body>
+        <div class="todays-picks">
+			<div class="heading">
+				<a href="index.html">Home</a> / All Products
+			</div>
+			<div class="product-grid" id="product-grid">
+					<div class="product">
+						<div class="owl-carousel" id="product-1">
+        				      	<div class="product-item">
+        				  			     <img src="images/WoodenElephant.jpg">
+        						</div>
+						</div>
+        		        <div id="product-price">$50</div>
+						<div id="product-name">Wooden Elephant</div>
+					</div>
+					<div class="product">
+						<div class="owl-carousel" id="product-2">
+        				      	<div class="product-item">
+        				  			     <img src="images/Handicraft.jpg">
+        						</div>
+						</div>
+        		        <div id="product-price">$20</div>
+						<div id="product-name">Handicraft</div>
+					</div>
+					<div class="product">
+						<div class="owl-carousel" id="product-3">
+        				      	<div class="product-item">
+        				  			     <img src="images/AntiqueShell.jpg">
+        						</div>
+						</div>
+        		        <div id="product-price">$20</div>
+						<div id="product-name">Antique Shell</div>
+					</div>
+					<div class="product">
+						<div class="owl-carousel" id="product-4">
+        				      	<div class="product-item">
+        				  			     <img src="images/WoodenBike.jpg">
+        						</div>
+						</div>
+        		        <div id="product-price">$30</div>
+						<div id="product-name">Wooden Bike</div>
+					</div>
+					<div class="product">
+						<div class="owl-carousel" id="product-5">
+        				      	<div class="product-item">
+        				  			     <img src="images/WoodenElephant.jpg">
+        						</div>
+						</div>
+        		        <div id="product-price">$40</div>
+						<div id="product-name">Peacock</div>
+					</div>
+					<div class="product">
+						<div class="owl-carousel" id="product-6">
+        				      	<div class="product-item">
+        				  			     <img src="images/JaipurHandicrafts.jpg">
+        						</div>
+						</div>
+        		        <div id="product-price">$80</div>
+						<div id="product-name">Jaipur Handicrafts</div>
+					</div>
+					<div class="product">
+						<div class="owl-carousel" id="product-7">
+        				      	<div class="product-item">
+        				  			     <img src="images/MarbleHandicrafts.jpg">
+        						</div>
+						</div>
+        		        <div id="product-price">$350</div>
+						<div id="product-name">Marble Handicrafts</div>
+					</div>
+					<div class="product">
+						<div class="owl-carousel" id="product-8">
+        				      	<div class="product-item">
+        				  			     <img src="images/SunHandicraft.jpg">
+        						</div>
+						</div>
+        		        <div id="product-price">$35</div>
+						<div id="product-name">Sun Handicraft</div>
+					</div>
+					<div class="product">
+						<div class="owl-carousel" id="product-9">
+        				      	<div class="product-item">
+        				  			     <img src="images/HappyOwl.jpg">
+        						</div>
+						</div>
+        		        <div id="product-price">$50</div>
+						<div id="product-name">Happy Owl</div>
+					</div>
+			</div>
+		</div>
+    </body>
+</html>

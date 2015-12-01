@@ -1,0 +1,126 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
+		
+		 <!--Important Owl stylesheet -->
+		<link rel="stylesheet" href="scripts/owl-carousel/owl.carousel.css">
+ 
+		 <!--Default Theme -->
+		<link rel="stylesheet" href="scripts/owl-carousel/owl.theme.css">
+ 
+		  <!--jQuery 1.7+  -->
+		<script src="scripts/jquery-1.11.2.js"></script>
+ 
+		 <!--Include js plugin -->
+		<script src="scripts/owl-carousel/owl.carousel.js"></script>
+		
+		<script>
+    		$(document).ready(function() {
+     
+    		  $("#featured-items").owlCarousel({
+    			  items : 2
+    		  });
+    		  
+    		  var products = document.getElementById('product-grid').children;
+    		  var i;
+    		  for (i = 0; i < products.length; i++) {
+    		  	var product = products[i].children[0]
+    		  	$("#"+ product.id).owlCarousel(
+        			{
+        				items : 1
+        			}
+        		);
+    			}
+    		});
+  			
+  			function triggerRight(elem) {
+  				var productId = elem.id.split("-")[2];
+  				$("#"+ elem.id).click(function(){
+				      $("#product-"+productId).trigger('owl.next');
+				  })
+  			}
+    	</script>
+	</head>
+	<body>
+	  <div class="top-menu">
+			<div class="Logo">
+				<a href="/">
+					<h1>Handicraft Store</h1>
+				</a>
+			</div>
+			<div class="options">
+				<p id="new"/>
+			</div>
+		</div>
+		<div class="owl-carousel" id="featured-items">
+      <div class="item">
+        <!--a href='{{ url_for("product", productId=products[0].id) }}'-->
+	  			<img src="images/WoodenElephant.jpg">
+        <!--/a-->
+      </div>   
+      <div class="item">
+        <!--a href='{{ url_for("product", productId=products[1].id) }}'-->
+	  			<img src="images/AfricanHandicrafts.jpg">
+        <!--/a-->
+      </div>
+      <div class="item">
+        <!--a href='{{ url_for("product", productId=products[2].id) }}'-->
+	  			<img src="images/HappyOwl.jpg">
+        <!--/a-->
+      </div>   
+      <div class="item">
+        <!--a href='{{ url_for("product", productId=products[3].id) }}'-->
+	  			<img src="images/SunHandicraft.jpg">
+        <!--/a-->
+      </div>
+		</div>
+		
+		<div class="todays-picks">
+			<div class="heading">
+				<a href="all.html">Our Products</a>
+			</div>
+			<div class="product-grid" id="product-grid">
+				<div class="product">
+					<div id="product-1">
+				      	<div class="product-item">
+				  			<img src="images/Handicraft.jpg">
+						</div>
+					</div>
+					<div id="product-price">$20</div>
+					<div id="product-name">Handicraft</div>
+				</div>
+				
+				<div class="product">
+					<div id="product-2">
+				      	<div class="product-item">
+				  			<img src="images/AntiqueShell.jpg">
+						</div>
+					</div>
+					<div id="product-price">$20</div>
+					<div id="product-name">Antique Shell</div>
+				</div>
+			
+				<div class="product">
+					<div id="product-3">
+				      	<div class="product-item">
+				  			<img src="images/WoodenBike.jpg">
+						</div>
+					</div>
+					<div id="product-price">$30</div>
+					<div id="product-name">Wooden Bike</div>
+				</div>
+			
+				<div class="product">
+					<div id="product-4">
+				      	<div class="product-item">
+				  			<img src="images/peacock.jpg">
+						</div>
+					</div>
+					<div id="product-price">$40</div>
+					<div id="product-name">Peacock</div>
+				</div>
+		</div>
+	</div>
+	</body>
