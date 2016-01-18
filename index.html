@@ -16,6 +16,15 @@
 		 <!--Include js plugin -->
 		<script src="scripts/owl-carousel/owl.carousel.js"></script>
 		
+		<!--Include angular-->
+		<script src="scripts/angular.js"></script>
+		
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		
+		<!-- Latest compiled JavaScript -->
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		
 		<script>
     		$(document).ready(function() {
      
@@ -43,7 +52,7 @@
   			}
     	</script>
 	</head>
-	<body>
+	<body ng-app>
 	  <div class="top-menu">
 			<div class="Logo">
 				<a href="/">
@@ -54,73 +63,38 @@
 				<p id="new"/>
 			</div>
 		</div>
-		<div class="owl-carousel" id="featured-items">
-      <div class="item">
-        <!--a href='{{ url_for("product", productId=products[0].id) }}'-->
-	  			<img src="images/WoodenElephant.jpg">
-        <!--/a-->
-      </div>   
-      <div class="item">
-        <!--a href='{{ url_for("product", productId=products[1].id) }}'-->
-	  			<img src="images/AfricanHandicrafts.jpg">
-        <!--/a-->
-      </div>
-      <div class="item">
-        <!--a href='{{ url_for("product", productId=products[2].id) }}'-->
-	  			<img src="images/HappyOwl.jpg">
-        <!--/a-->
-      </div>   
-      <div class="item">
-        <!--a href='{{ url_for("product", productId=products[3].id) }}'-->
-	  			<img src="images/SunHandicraft.jpg">
-        <!--/a-->
-      </div>
+		<div class="owl-carousel" id="featured-items" ng-init="featuredItems=[{name:'WoodenElephant', image:'images/WoodenElephant.jpg'}, {name:'AfricanHandicrafts', image:'images/AfricanHandicrafts.jpg'}, {name:'HappyOwl', image:'images/HappyOwl.jpg'}, {name:'SunHandicraft', image:'images/SunHandicraft.jpg'}]">
+			<div class="item" ng-repeat="featuredItem in featuredItems">
+				<img src="{{featuredItem.image}}" />
+			</div>
+      
 		</div>
 		
 		<div class="todays-picks">
 			<div class="heading">
 				<a href="all.html">Our Products</a>
 			</div>
-			<div class="product-grid" id="product-grid">
-				<div class="product">
-					<div id="product-1">
-				      	<div class="product-item">
-				  			<img src="images/Handicraft.jpg">
-						</div>
-					</div>
-					<div id="product-price">$20</div>
-					<div id="product-name">Handicraft</div>
-				</div>
+			<div class="product-grid" id="product-grid" ng-init="products=[{id:1, name:'Handicraft', price:20, image:'images/Handicraft.jpg'}, {id:2, price:20, name:'Antique Shell', image:'images/AntiqueShell.jpg'}, {id:3, price:30, name:'Wooden Bike', image:'images/WoodenBike.jpg'}, {id:4, price:40, name:'Peacock', image:'images/peacock.jpg'}]">
 				
-				<div class="product">
-					<div id="product-2">
-				      	<div class="product-item">
-				  			<img src="images/AntiqueShell.jpg">
-						</div>
+				<div class="product" ng-repeat="product in products" class="col-sm-4">
+					<div>
+				      <div class="product-item">
+				  			<img src="{{product.image}}" class="img-thumbnail"/>
+							</div>
 					</div>
-					<div id="product-price">$20</div>
-					<div id="product-name">Antique Shell</div>
-				</div>
-			
-				<div class="product">
-					<div id="product-3">
-				      	<div class="product-item">
-				  			<img src="images/WoodenBike.jpg">
-						</div>
-					</div>
-					<div id="product-price">$30</div>
-					<div id="product-name">Wooden Bike</div>
-				</div>
-			
-				<div class="product">
-					<div id="product-4">
-				      	<div class="product-item">
-				  			<img src="images/peacock.jpg">
-						</div>
-					</div>
-					<div id="product-price">$40</div>
-					<div id="product-name">Peacock</div>
+					<div id="product-price">${{product.price}}</div>
+					<div id="product-name">{{product.name}}</div>
 				</div>
 		</div>
 	</div>
+	
+	<script>
+		function featuredCtrl($scope) {
+			scope.featuredItems = [{name: "WoodenElephant", image: "images/WoodenElephant.jpg"}, {name: "AfricanHandicrafts", image: "images/AfricanHandicrafts.jpg"}, {name: "HappyOwl", image: "images/HappyOwl.jpg"}, {name: "SunHandicraft", image: "images/SunHandicraft.jpg"}];
+		};
+		
+		function productCtrl($scope) {
+			scope.products = [{id:1, name:'Handicraft', price:20, image:'images/Handicraft.jpg'}, {id:2, price:20, name:'Antique Shell', image:'images/AntiqueShell.jpg'}, {id:3, price:30, name:'Wooden Bike', image:'images/WoodenBike.jpg'}, {id:4, price:40, name:'Peacock', image:'images/peacock.jpg'}];
+		};
+	</script>
 	</body>
