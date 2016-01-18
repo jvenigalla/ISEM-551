@@ -15,6 +15,15 @@
 		 <!--Include js plugin -->
 		<script src="scripts/owl-carousel/owl.carousel.js"></script>
 		
+		<!--Include angular-->
+		<script src="scripts/angular.js"></script>
+		
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		
+		<!-- Latest compiled JavaScript -->
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		
 		<script>
     		$(document).ready(function() {
     		  var products = document.getElementById('product-grid').children;
@@ -30,94 +39,26 @@
     		});
     	</script>
     </head>
-    <body>
+    <body ng-app>
         <div class="todays-picks">
 			<div class="heading">
 				<a href="index.html">Home</a> / All Products
 			</div>
-			<div class="product-grid" id="product-grid">
-					<div class="product">
-						<div class="owl-carousel" id="product-1">
-        				      	<div class="product-item">
-        				  			     <img src="images/WoodenElephant.jpg">
-        						</div>
+			<div class="product-grid" id="product-grid" ng-init="products=[{id:1, name:'Handicraft', price:20, image:'images/Handicraft.jpg'}, {id:2, price:20, name:'Antique Shell', image:'images/AntiqueShell.jpg'}, {id:3, price:30, name:'Wooden Bike', image:'images/WoodenBike.jpg'}, {id:4, price:40, name:'Peacock', image:'images/peacock.jpg'}, {id:5, price:50, name:'Wooden Elephant', image:'images/WoodenElephant.jpg'}, {id:6, price:80, name:'Jaipur Handicrafts', image:'images/JaipurHandicrafts.jpg'}, {id:7, price:350, name:'Marble Handicrafts', image:'images/MarbleHandicrafts.jpg'}, {id:8, price:50, name:'Happy Owl', image:'images/HappyOwl.jpg'}]">
+				
+				<div class="product" class="col-md-6" ng-repeat="product in products">
+					
+					<div class="owl-carousel" id="product-{{product.id}}">
+						<div class="product-item">
+							<img src="{{product.image}}" class="img-thumbnail"/>
 						</div>
-        		        <div id="product-price">$50</div>
-						<div id="product-name">Wooden Elephant</div>
 					</div>
-					<div class="product">
-						<div class="owl-carousel" id="product-2">
-        				      	<div class="product-item">
-        				  			     <img src="images/Handicraft.jpg">
-        						</div>
-						</div>
-        		        <div id="product-price">$20</div>
-						<div id="product-name">Handicraft</div>
-					</div>
-					<div class="product">
-						<div class="owl-carousel" id="product-3">
-        				      	<div class="product-item">
-        				  			     <img src="images/AntiqueShell.jpg">
-        						</div>
-						</div>
-        		        <div id="product-price">$20</div>
-						<div id="product-name">Antique Shell</div>
-					</div>
-					<div class="product">
-						<div class="owl-carousel" id="product-4">
-        				      	<div class="product-item">
-        				  			     <img src="images/WoodenBike.jpg">
-        						</div>
-						</div>
-        		        <div id="product-price">$30</div>
-						<div id="product-name">Wooden Bike</div>
-					</div>
-					<div class="product">
-						<div class="owl-carousel" id="product-5">
-        				      	<div class="product-item">
-        				  			     <img src="images/WoodenElephant.jpg">
-        						</div>
-						</div>
-        		        <div id="product-price">$40</div>
-						<div id="product-name">Peacock</div>
-					</div>
-					<div class="product">
-						<div class="owl-carousel" id="product-6">
-        				      	<div class="product-item">
-        				  			     <img src="images/JaipurHandicrafts.jpg">
-        						</div>
-						</div>
-        		        <div id="product-price">$80</div>
-						<div id="product-name">Jaipur Handicrafts</div>
-					</div>
-					<div class="product">
-						<div class="owl-carousel" id="product-7">
-        				      	<div class="product-item">
-        				  			     <img src="images/MarbleHandicrafts.jpg">
-        						</div>
-						</div>
-        		        <div id="product-price">$350</div>
-						<div id="product-name">Marble Handicrafts</div>
-					</div>
-					<div class="product">
-						<div class="owl-carousel" id="product-8">
-        				      	<div class="product-item">
-        				  			     <img src="images/SunHandicraft.jpg">
-        						</div>
-						</div>
-        		        <div id="product-price">$35</div>
-						<div id="product-name">Sun Handicraft</div>
-					</div>
-					<div class="product">
-						<div class="owl-carousel" id="product-9">
-        				      	<div class="product-item">
-        				  			     <img src="images/HappyOwl.jpg">
-        						</div>
-						</div>
-        		        <div id="product-price">$50</div>
-						<div id="product-name">Happy Owl</div>
-					</div>
+					<div id="product-price">${{product.price}}</div>
+					<div id="product-name">{{product.name}}</div>
+				</div>
+				
 			</div>
+			
 		</div>
     </body>
 </html>
